@@ -1,0 +1,80 @@
+# ==============================================================================
+# PACTIVA ENERGY — Production WordPress .gitignore
+# ==============================================================================
+
+# ------------------------------------------------------------------------------
+# Sensitive Configuration & Credentials (NEVER commit DB passwords or salts!)
+# ------------------------------------------------------------------------------
+wp-config.php
+.env
+.env.*
+*.env
+
+# ------------------------------------------------------------------------------
+# Server & Environment Files
+# ------------------------------------------------------------------------------
+.htaccess
+nginx.conf
+web.config
+php.ini
+.user.ini
+
+# ------------------------------------------------------------------------------
+# Large Media & Uploads (Keeps Git repository fast and lightweight)
+# ------------------------------------------------------------------------------
+wp-content/uploads/
+wp-content/blogs.dir/
+
+# ------------------------------------------------------------------------------
+# Cache, Backups & Temporary Files
+# ------------------------------------------------------------------------------
+wp-content/cache/
+wp-content/upgrade/
+wp-content/backup-db/
+wp-content/backups/
+wp-content/wflogs/
+*.sql
+*.sql.gz
+*.tar
+*.tar.gz
+*.zip
+*.bak
+
+# ------------------------------------------------------------------------------
+# Logs & Error Dumps
+# ------------------------------------------------------------------------------
+*.log
+debug.log
+error_log
+wp-content/debug.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# ------------------------------------------------------------------------------
+# Node & Build Artifacts
+# ------------------------------------------------------------------------------
+node_modules/
+package-lock.json
+vendor/
+.npm
+.yarn
+
+# ------------------------------------------------------------------------------
+# OS & IDE Generated Files
+# ------------------------------------------------------------------------------
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+desktop.ini
+
+.idea/
+.vscode/
+*.sublime-project
+*.sublime-workspace
+*.swp
+*~
