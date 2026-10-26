@@ -1,0 +1,26 @@
+{
+  "name": "pactiva-energy",
+  "version": "1.0.0",
+  "description": "PACTIVA ENERGY - Premium E-Commerce WordPress Child Theme",
+  "main": "functions.php",
+  "scripts": {
+    "build": "tailwindcss -i ./src/css/input.css -o ./assets/css/app.min.css --minify",
+    "watch": "tailwindcss -i ./src/css/input.css -o ./assets/css/app.min.css --watch",
+    "dev": "tailwindcss -i ./src/css/input.css -o ./assets/css/app.min.css"
+  },
+  "keywords": [
+    "wordpress",
+    "woocommerce",
+    "pactiva-energy",
+    "lithium-battery",
+    "tailwind"
+  ],
+  "author": "Pactiva Energy Tech India Pvt Ltd",
+  "license": "GPL-2.0-or-later",
+  "devDependencies": {
+    "autoprefixer": "^10.4.27",
+    "cssnano": "^7.1.4",
+    "postcss": "^8.5.8",
+    "tailwindcss": "^3.4.17"
+  }
+}

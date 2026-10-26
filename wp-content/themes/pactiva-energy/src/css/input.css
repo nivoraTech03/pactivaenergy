@@ -1,0 +1,1019 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --brand-orange: #FF8A00;
+    --brand-deep: #E96F00;
+    --brand-black: #FFFFFF;
+    --brand-dark: #16171A;
+    --brand-charcoal: #202124;
+    --brand-light: #F5F6F8;
+    --brand-border: #E2E8F0;
+    --brand-muted: #667085;
+  }
+
+  html,
+  body {
+    scroll-behavior: smooth;
+    font-family: 'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
+    color: #16171A;
+    background-color: #FFFFFF;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  .font-heading,
+  .entry-title {
+    font-family: 'Plus Jakarta Sans', 'Outfit', system-ui, sans-serif !important;
+    letter-spacing: -0.025em;
+  }
+
+  .font-mono,
+  .font-tech,
+  .tech-spec-pill,
+  code,
+  kbd,
+  samp,
+  pre {
+    font-family: 'Space Grotesk', ui-monospace, monospace !important;
+  }
+
+  ::selection {
+    background-color: #FF8A00;
+    color: #FFFFFF;
+  }
+}
+
+@layer components {
+
+  /* Industrial Energy Tech Button Styles */
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 px-6 py-3.5 bg-gradient-to-r from-brand-orange to-brand-deep hover:from-brand-deep hover:to-orange-700 text-white font-bold rounded-xl shadow-lg shadow-orange-500/25 hover:shadow-orange-500/40 transition-all duration-300 transform hover:-translate-y-0.5 active:translate-y-0 focus:outline-none focus:ring-4 focus:ring-brand-orange/20;
+  }
+
+  .btn-secondary {
+    @apply inline-flex items-center justify-center gap-2 px-6 py-3.5 bg-brand-charcoal hover:bg-brand-black text-white font-semibold rounded-xl border border-white/10 shadow-md transition-all duration-300 transform hover:-translate-y-0.5 active:translate-y-0 focus:outline-none focus:ring-2 focus:ring-white/20;
+  }
+
+  .btn-outline {
+    @apply inline-flex items-center justify-center gap-2 px-6 py-3.5 bg-transparent hover:bg-brand-orange/10 text-brand-orange font-semibold rounded-xl border-2 border-brand-orange transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-brand-orange;
+  }
+
+  .btn-whatsapp {
+    @apply inline-flex items-center justify-center gap-2 px-4 py-2.5 bg-[#25D366] hover:bg-[#20BD5A] text-white font-bold rounded-xl shadow-md shadow-emerald-500/20 hover:shadow-emerald-500/35 transition-all duration-300 transform hover:-translate-y-0.5;
+  }
+
+  /* Badge Styles */
+  .badge-category {
+    @apply inline-flex items-center px-2.5 py-1 text-xs font-semibold rounded-md bg-orange-50 text-brand-orange border border-orange-200/60;
+  }
+
+  .badge-stock {
+    @apply inline-flex items-center gap-1.5 px-2.5 py-1 text-xs font-semibold rounded-full bg-emerald-50 text-emerald-700 border border-emerald-200;
+  }
+
+  .badge-enquiry {
+    @apply inline-flex items-center gap-1.5 px-2.5 py-1 text-xs font-semibold rounded-full bg-blue-50 text-blue-700 border border-blue-200;
+  }
+
+  /* Card Styles */
+  .pactiva-card {
+    @apply bg-white rounded-2xl border border-slate-200/80 shadow-card hover:shadow-card-hover transition-all duration-300 flex flex-col overflow-hidden;
+  }
+
+  .pactiva-card-dark {
+    @apply bg-brand-dark rounded-2xl border border-white/10 shadow-xl shadow-black/40 flex flex-col overflow-hidden;
+  }
+
+  /* Spec Table Styles */
+  .spec-table {
+    @apply w-full text-sm text-left border-collapse;
+  }
+
+  .spec-table th,
+  .spec-table td {
+    @apply py-3 px-4 border-b border-slate-100;
+  }
+
+  .spec-table tr:nth-child(even) {
+    @apply bg-slate-50/60;
+  }
+
+  /* Premium Form Input Fields */
+  .pactiva-input {
+    @apply w-full px-4 bg-slate-50 hover:bg-slate-100/70 focus:bg-white text-slate-900 placeholder-slate-400 text-xs sm:text-sm font-medium border border-slate-200 hover:border-slate-300 focus:border-brand-orange rounded-xl shadow-sm focus:outline-none focus:ring-4 focus:ring-brand-orange/15 transition-all duration-200;
+    height: 48px !important;
+    min-height: 48px !important;
+    max-height: 48px !important;
+    box-sizing: border-box !important;
+  }
+
+  .pactiva-select {
+    @apply w-full px-4 bg-slate-50 hover:bg-slate-100/70 focus:bg-white text-slate-900 text-xs sm:text-sm font-medium border border-slate-200 hover:border-slate-300 focus:border-brand-orange rounded-xl shadow-sm focus:outline-none focus:ring-4 focus:ring-brand-orange/15 transition-all duration-200 cursor-pointer appearance-none;
+    height: 48px !important;
+    min-height: 48px !important;
+    max-height: 48px !important;
+    box-sizing: border-box !important;
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%23FF8A00' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M6 8l4 4 4-4'/%3e%3c/svg%3e");
+    background-position: right 0.85rem center;
+    background-repeat: no-repeat;
+    background-size: 1.25em 1.25em;
+    padding-right: 2.75rem;
+  }
+
+  .pactiva-textarea {
+    @apply w-full px-4 py-3 bg-slate-50 hover:bg-slate-100/70 focus:bg-white text-slate-900 placeholder-slate-400 text-xs sm:text-sm font-medium border border-slate-200 hover:border-slate-300 focus:border-brand-orange rounded-xl shadow-sm focus:outline-none focus:ring-4 focus:ring-brand-orange/15 transition-all duration-200 resize-y leading-relaxed;
+    height: auto !important;
+    min-height: 100px !important;
+    box-sizing: border-box !important;
+  }
+
+  /* Form Labels */
+  .pactiva-label {
+    @apply block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1.5;
+  }
+
+  /* Checkboxes and Radios */
+  .pactiva-checkbox {
+    @apply w-4 h-4 text-brand-orange border-slate-300 rounded focus:ring-brand-orange/20 focus:ring-2 cursor-pointer;
+    accent-color: #FF8A00;
+  }
+
+  .pactiva-radio {
+    @apply w-4 h-4 text-brand-orange border-slate-300 focus:ring-brand-orange/20 focus:ring-2 cursor-pointer;
+    accent-color: #FF8A00;
+  }
+
+  /* High-Tech RFQ Modal Inputs */
+  .pactiva-modal-input {
+    @apply w-full pl-10 pr-3.5 bg-slate-50/80 hover:bg-slate-100/60 focus:bg-white text-slate-900 placeholder:text-slate-400 text-xs sm:text-[13px] font-medium border border-slate-200/90 hover:border-slate-300 focus:border-brand-orange rounded-xl shadow-sm focus:outline-none focus:ring-4 focus:ring-brand-orange/15 transition-all duration-200;
+    height: 44px !important;
+    min-height: 44px !important;
+    max-height: 44px !important;
+    box-sizing: border-box !important;
+  }
+
+  .pactiva-modal-select {
+    @apply w-full pl-10 pr-9 bg-slate-50/80 hover:bg-slate-100/60 focus:bg-white text-slate-900 text-xs sm:text-[13px] font-medium border border-slate-200/90 hover:border-slate-300 focus:border-brand-orange rounded-xl shadow-sm focus:outline-none focus:ring-4 focus:ring-brand-orange/15 transition-all duration-200 cursor-pointer appearance-none;
+    height: 44px !important;
+    min-height: 44px !important;
+    max-height: 44px !important;
+    box-sizing: border-box !important;
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%23FF8A00' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M6 8l4 4 4-4'/%3e%3c/svg%3e");
+    background-position: right 0.75rem center;
+    background-repeat: no-repeat;
+    background-size: 1.15em 1.15em;
+  }
+}
+
+/* ==========================================================================
+   WooCommerce UI Overrides (Pagination, Ordering, Forms, Tables)
+   ========================================================================== */
+
+/* ==========================================================================
+   Astra & WooCommerce Page Title Overrides (Hide redundant Astra h1)
+   ========================================================================== */
+.woocommerce-cart .entry-header,
+.woocommerce-checkout .entry-header,
+.woocommerce-cart .ast-article-single .entry-header,
+.woocommerce-checkout .ast-article-single .entry-header,
+.woocommerce-cart h1.entry-title,
+.woocommerce-checkout h1.entry-title {
+  display: none !important;
+}
+
+/* ==========================================================================
+   Coupon Form Removal & Suppression (Direct B2B WhatsApp Checkout)
+   ========================================================================== */
+.woocommerce-form-coupon-toggle,
+.checkout_coupon,
+.woocommerce-form-coupon,
+.woocommerce-checkout .woocommerce-info:has(a.showcoupon),
+.woocommerce-checkout .woocommerce-info {
+  display: none !important;
+}
+
+/* Hide duplicate Billing Details / Shipping Details Headings */
+.woocommerce-billing-fields>h3,
+.woocommerce-shipping-fields>h3,
+.woocommerce-additional-fields>h3 {
+  display: none !important;
+}
+
+/* WooCommerce Global Input Overrides */
+.woocommerce form .form-row input.input-text,
+.woocommerce form .form-row select,
+.woocommerce-input-wrapper input.input-text {
+  @apply w-full px-4 bg-slate-50 hover:bg-slate-100/70 focus:bg-white text-slate-900 placeholder-slate-400 text-xs sm:text-sm font-medium border border-slate-200 hover:border-slate-300 focus:border-brand-orange rounded-xl shadow-sm focus:outline-none focus:ring-4 focus:ring-brand-orange/15 transition-all duration-200 !important;
+  height: 48px !important;
+  min-height: 48px !important;
+  max-height: 48px !important;
+  box-sizing: border-box !important;
+}
+
+.woocommerce form .form-row textarea {
+  @apply w-full px-4 py-3 bg-slate-50 hover:bg-slate-100/70 focus:bg-white text-slate-900 placeholder-slate-400 text-xs sm:text-sm font-medium border border-slate-200 hover:border-slate-300 focus:border-brand-orange rounded-xl shadow-sm focus:outline-none focus:ring-4 focus:ring-brand-orange/15 transition-all duration-200 !important;
+  height: auto !important;
+  min-height: 100px !important;
+  box-sizing: border-box !important;
+}
+
+.woocommerce form .form-row label {
+  @apply text-xs font-bold text-slate-700 mb-1.5 block uppercase tracking-wider;
+}
+
+.woocommerce form .form-row .required {
+  color: #FF8A00 !important;
+  font-weight: 900 !important;
+  text-decoration: none !important;
+}
+
+/* ==========================================================================
+   WooCommerce Checkout Form Responsive 50% / 50% Grid & Inputs
+   ========================================================================== */
+.woocommerce-checkout .woocommerce-billing-fields__field-wrapper,
+#customer_details .woocommerce-billing-fields__field-wrapper {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  justify-content: space-between !important;
+  gap: 1.15rem 0 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+/* 50% Column Pairs: First Name & Last Name, City & State, Pin Code & Phone */
+.woocommerce-checkout #billing_first_name_field,
+.woocommerce-checkout #billing_last_name_field,
+.woocommerce-checkout #billing_city_field,
+.woocommerce-checkout #billing_state_field,
+.woocommerce-checkout #billing_postcode_field,
+.woocommerce-checkout #billing_phone_field {
+  width: 48.5% !important;
+  flex: 0 0 48.5% !important;
+  max-width: 48.5% !important;
+  float: none !important;
+  clear: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  box-sizing: border-box !important;
+}
+
+/* Full Width 100% Fields */
+.woocommerce-checkout #billing_company_field,
+.woocommerce-checkout #billing_country_field,
+.woocommerce-checkout #billing_address_1_field,
+.woocommerce-checkout #billing_address_2_field,
+.woocommerce-checkout #billing_email_field,
+.woocommerce-checkout #order_comments_field {
+  width: 100% !important;
+  flex: 0 0 100% !important;
+  max-width: 100% !important;
+  float: none !important;
+  clear: both !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  box-sizing: border-box !important;
+}
+
+/* Mobile Screen (< 640px): 100% Full Width Stack */
+@media (max-width: 639px) {
+
+  .woocommerce-checkout .woocommerce-billing-fields__field-wrapper,
+  #customer_details .woocommerce-billing-fields__field-wrapper {
+    gap: 1rem 0 !important;
+  }
+
+  .woocommerce-checkout #billing_first_name_field,
+  .woocommerce-checkout #billing_last_name_field,
+  .woocommerce-checkout #billing_city_field,
+  .woocommerce-checkout #billing_state_field,
+  .woocommerce-checkout #billing_postcode_field,
+  .woocommerce-checkout #billing_phone_field,
+  .woocommerce-checkout #billing_company_field,
+  .woocommerce-checkout #billing_country_field,
+  .woocommerce-checkout #billing_address_1_field,
+  .woocommerce-checkout #billing_address_2_field,
+  .woocommerce-checkout #billing_email_field,
+  .woocommerce-checkout #order_comments_field {
+    width: 100% !important;
+    flex: 0 0 100% !important;
+    max-width: 100% !important;
+  }
+}
+
+.woocommerce-checkout .woocommerce-billing-fields p.form-row,
+.woocommerce-checkout .woocommerce-shipping-fields p.form-row,
+.woocommerce-checkout .woocommerce-additional-fields p.form-row {
+  float: none !important;
+  width: 100% !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  clear: none !important;
+}
+
+.woocommerce-checkout .form-row label {
+  display: block !important;
+  font-size: 0.6875rem !important;
+  font-weight: 800 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.05em !important;
+  color: #475569 !important;
+  margin-bottom: 0.375rem !important;
+  line-height: 1.2 !important;
+}
+
+.woocommerce-checkout .form-row .woocommerce-input-wrapper {
+  display: block !important;
+  width: 100% !important;
+  position: relative !important;
+}
+
+/* Precision 48px Input Fields (Uniform across First Name, Last Name, Pin Code, Phone, etc.) */
+.woocommerce-checkout input.input-text,
+.woocommerce-checkout input[type="text"],
+.woocommerce-checkout input[type="email"],
+.woocommerce-checkout input[type="tel"],
+.woocommerce-checkout input[type="password"] {
+  display: block !important;
+  width: 100% !important;
+  height: 48px !important;
+  min-height: 48px !important;
+  max-height: 48px !important;
+  line-height: 46px !important;
+  padding: 0 1rem !important;
+  background-color: #f8fafc !important;
+  border: 1px solid #e2e8f0 !important;
+  border-radius: 0.75rem !important;
+  font-size: 0.875rem !important;
+  font-weight: 500 !important;
+  color: #0f172a !important;
+  box-sizing: border-box !important;
+  transition: all 0.2s ease !important;
+  -webkit-appearance: none !important;
+  appearance: none !important;
+}
+
+.woocommerce-checkout input.input-text:hover,
+.woocommerce-checkout input[type="text"]:hover,
+.woocommerce-checkout input[type="email"]:hover,
+.woocommerce-checkout input[type="tel"]:hover {
+  background-color: #f1f5f9 !important;
+  border-color: #cbd5e1 !important;
+}
+
+.woocommerce-checkout input.input-text:focus,
+.woocommerce-checkout input[type="text"]:focus,
+.woocommerce-checkout input[type="email"]:focus,
+.woocommerce-checkout input[type="tel"]:focus {
+  background-color: #ffffff !important;
+  border-color: #FF8A00 !important;
+  box-shadow: 0 0 0 4px rgba(255, 138, 0, 0.15) !important;
+  outline: none !important;
+}
+
+.woocommerce-checkout textarea {
+  display: block !important;
+  width: 100% !important;
+  min-height: 110px !important;
+  padding: 0.75rem 1rem !important;
+  background-color: #f8fafc !important;
+  border: 1px solid #e2e8f0 !important;
+  border-radius: 0.75rem !important;
+  font-size: 0.875rem !important;
+  font-weight: 500 !important;
+  color: #0f172a !important;
+  box-sizing: border-box !important;
+  resize: vertical !important;
+  line-height: 1.5 !important;
+  transition: all 0.2s ease !important;
+}
+
+.woocommerce-checkout textarea:hover {
+  background-color: #f1f5f9 !important;
+  border-color: #cbd5e1 !important;
+}
+
+.woocommerce-checkout textarea:focus {
+  background-color: #ffffff !important;
+  border-color: #FF8A00 !important;
+  box-shadow: 0 0 0 4px rgba(255, 138, 0, 0.15) !important;
+  outline: none !important;
+}
+
+/* Select2 Country / State Dropdown Overrides - Precision 48px height matching inputs */
+.select2-container {
+  width: 100% !important;
+  display: block !important;
+}
+
+.select2-container--default .select2-selection--single {
+  height: 48px !important;
+  min-height: 48px !important;
+  max-height: 48px !important;
+  background-color: #f8fafc !important;
+  border: 1px solid #e2e8f0 !important;
+  border-radius: 0.75rem !important;
+  padding: 0 1rem !important;
+  display: flex !important;
+  align-items: center !important;
+  box-sizing: border-box !important;
+  transition: all 0.2s ease !important;
+}
+
+.select2-container--default .select2-selection--single:hover {
+  border-color: #cbd5e1 !important;
+  background-color: #f1f5f9 !important;
+}
+
+.select2-container--default.select2-container--open .select2-selection--single,
+.select2-container--default.select2-container--focus .select2-selection--single {
+  border-color: #FF8A00 !important;
+  background-color: #ffffff !important;
+  box-shadow: 0 0 0 4px rgba(255, 138, 0, 0.15) !important;
+  outline: none !important;
+}
+
+.select2-container--default .select2-selection--single .select2-selection__rendered {
+  color: #0f172a !important;
+  font-size: 0.875rem !important;
+  font-weight: 500 !important;
+  line-height: 46px !important;
+  padding: 0 !important;
+  display: block !important;
+  width: 100% !important;
+}
+
+.select2-container--default .select2-selection--single .select2-selection__arrow {
+  height: 46px !important;
+  right: 12px !important;
+  top: 0 !important;
+  display: flex !important;
+  align-items: center !important;
+}
+
+.select2-dropdown {
+  border: 1px solid #e2e8f0 !important;
+  border-radius: 0.75rem !important;
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.12) !important;
+  overflow: hidden !important;
+  z-index: 9999 !important;
+}
+
+.select2-results__option {
+  font-size: 0.8125rem !important;
+  padding: 8px 12px !important;
+}
+
+.select2-container--default .select2-results__option--highlighted[aria-selected] {
+  background-color: #FF8A00 !important;
+  color: #ffffff !important;
+}
+
+/* ==========================================================================
+   WooCommerce Added to Cart Pill & AJAX State
+   ========================================================================== */
+.pactiva-product-card a.added_to_cart,
+a.added_to_cart.wc-forward {
+  grid-column: 1 / -1 !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 6px !important;
+  width: 100% !important;
+  margin-top: 8px !important;
+  padding: 8px 14px !important;
+  background: linear-gradient(135deg, #FF8A00 0%, #E96F00 100%) !important;
+  color: #FFFFFF !important;
+  font-size: 11px !important;
+  font-weight: 800 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.05em !important;
+  border-radius: 10px !important;
+  box-shadow: 0 4px 14px rgba(255, 138, 0, 0.35) !important;
+  text-decoration: none !important;
+  transition: all 0.25s ease !important;
+  animation: pactivaFadeInUp 0.3s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+.pactiva-product-card a.added_to_cart:hover,
+a.added_to_cart.wc-forward:hover {
+  background: linear-gradient(135deg, #E96F00 0%, #C85E00 100%) !important;
+  transform: translateY(-1px) !important;
+  box-shadow: 0 6px 18px rgba(255, 138, 0, 0.45) !important;
+  color: #FFFFFF !important;
+}
+
+.pactiva-product-card a.added_to_cart::before,
+a.added_to_cart.wc-forward::before {
+  content: '✓';
+  font-size: 11px;
+  font-weight: 900;
+}
+
+.pactiva-product-card a.added_to_cart::after,
+a.added_to_cart.wc-forward::after {
+  content: '→';
+  font-size: 12px;
+  font-weight: 900;
+  margin-left: 3px;
+  transition: transform 0.2s ease;
+}
+
+.pactiva-product-card a.added_to_cart:hover::after,
+a.added_to_cart.wc-forward:hover::after {
+  transform: translateX(3px);
+}
+
+/* AJAX Spinner on Add to Cart button */
+.add_to_cart_button.loading {
+  opacity: 0.75 !important;
+  cursor: wait !important;
+  position: relative;
+}
+
+.add_to_cart_button.loading::after {
+  content: "" !important;
+  display: inline-block !important;
+  width: 12px !important;
+  height: 12px !important;
+  margin-left: 6px !important;
+  border: 2px solid rgba(255, 255, 255, 0.4) !important;
+  border-top-color: #ffffff !important;
+  border-radius: 50% !important;
+  animation: spin 0.6s linear infinite !important;
+}
+
+@keyframes pactivaFadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ==========================================================================
+   Floating WhatsApp Button Resets (Zero Blue Outline / Box)
+   ========================================================================== */
+#pactiva-wa-widget,
+#pactiva-wa-widget *,
+#pactiva-wa-widget a,
+#pactiva-wa-widget svg {
+  outline: none !important;
+  outline-width: 0 !important;
+  outline-style: none !important;
+  -webkit-tap-highlight-color: transparent !important;
+  -webkit-focus-ring-color: transparent !important;
+}
+
+#pactiva-wa-widget a {
+  border: none !important;
+  border-radius: 9999px !important;
+  box-shadow: 0 10px 25px -5px rgba(37, 211, 102, 0.4), 0 8px 10px -6px rgba(37, 211, 102, 0.3) !important;
+}
+
+#pactiva-wa-widget a:focus,
+#pactiva-wa-widget a:active,
+#pactiva-wa-widget a:focus-visible,
+#pactiva-wa-widget a:hover {
+  outline: none !important;
+  outline-width: 0 !important;
+  border: none !important;
+  box-shadow: 0 14px 28px -4px rgba(37, 211, 102, 0.5) !important;
+}
+
+/* Pagination Bar */
+.woocommerce-pagination {
+  @apply flex justify-center items-center my-12 !important;
+}
+
+.woocommerce nav.woocommerce-pagination ul.page-numbers,
+.woocommerce-pagination ul.page-numbers {
+  @apply inline-flex items-center gap-2 p-2 bg-white rounded-2xl border border-slate-200/90 shadow-md list-none !important;
+}
+
+.woocommerce nav.woocommerce-pagination ul.page-numbers li,
+.woocommerce-pagination ul.page-numbers li {
+  @apply list-none m-0 p-0 inline-block border-none !important;
+}
+
+.woocommerce nav.woocommerce-pagination ul.page-numbers li span.current,
+.woocommerce-pagination ul.page-numbers li span.current {
+  @apply flex items-center justify-center min-w-[42px] h-[42px] px-4 bg-gradient-to-r from-brand-orange to-brand-deep text-white font-black text-xs rounded-xl shadow-md shadow-orange-500/30 ring-2 ring-brand-orange/20 border-none !important;
+}
+
+.woocommerce nav.woocommerce-pagination ul.page-numbers li a.page-numbers,
+.woocommerce-pagination ul.page-numbers li a.page-numbers {
+  @apply flex items-center justify-center min-w-[42px] h-[42px] px-4 bg-slate-50 hover:bg-orange-50 text-slate-700 hover:text-brand-orange font-bold text-xs rounded-xl transition-all duration-200 hover:scale-105 border-none shadow-none !important;
+}
+
+.woocommerce nav.woocommerce-pagination ul.page-numbers li a.prev,
+.woocommerce nav.woocommerce-pagination ul.page-numbers li a.next,
+.woocommerce-pagination ul.page-numbers li a.prev,
+.woocommerce-pagination ul.page-numbers li a.next {
+  @apply bg-slate-900 text-white hover:bg-brand-orange hover:text-white px-4 font-bold rounded-xl transition-all shadow-sm border-none !important;
+}
+
+/* Catalog Ordering Select */
+.woocommerce-ordering {
+  @apply relative;
+}
+
+.woocommerce-ordering select.orderby {
+  @apply appearance-none bg-white hover:bg-slate-50 border border-slate-200 hover:border-slate-300 text-slate-800 text-xs font-bold rounded-xl px-4 py-2.5 pr-9 focus:outline-none focus:ring-4 focus:ring-brand-orange/15 focus:border-brand-orange cursor-pointer transition-all shadow-sm !important;
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%23FF8A00' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M6 8l4 4 4-4'/%3e%3c/svg%3e") !important;
+  background-position: right 0.75rem center !important;
+  background-repeat: no-repeat !important;
+  background-size: 1.1em 1.1em !important;
+}
+
+/* Single Product Quantity Box */
+.quantity {
+  @apply inline-flex items-center;
+}
+
+.quantity input.qty {
+  @apply w-20 h-12 text-center bg-slate-50 hover:bg-white border border-slate-200 rounded-xl font-black text-sm text-slate-900 focus:bg-white focus:border-brand-orange focus:ring-4 focus:ring-brand-orange/15 outline-none transition-all shadow-sm;
+}
+
+/* WooCommerce Buttons */
+.woocommerce #respond input#submit.alt,
+.woocommerce a.button.alt,
+.woocommerce button.button.alt,
+.woocommerce input.button.alt {
+  @apply bg-gradient-to-r from-brand-orange to-brand-deep hover:from-brand-deep hover:to-orange-700 text-white font-bold rounded-xl shadow-lg shadow-orange-500/25 px-6 py-3 transition-all duration-300 !important;
+}
+
+.woocommerce #respond input#submit,
+.woocommerce a.button,
+.woocommerce button.button,
+.woocommerce input.button {
+  @apply bg-slate-900 hover:bg-brand-black text-white font-bold rounded-xl px-5 py-2.5 text-xs transition-all duration-200 !important;
+}
+
+/* WooCommerce Notices */
+.woocommerce-message,
+.woocommerce-info,
+.woocommerce-error {
+  @apply rounded-2xl p-4 text-xs font-semibold shadow-sm border mb-6 flex items-center justify-between !important;
+}
+
+.woocommerce-message {
+  @apply bg-emerald-50 text-emerald-800 border-emerald-200 !important;
+}
+
+.woocommerce-info {
+  @apply bg-sky-50 text-sky-800 border-sky-200 !important;
+}
+
+.woocommerce-error {
+  @apply bg-rose-50 text-rose-800 border-rose-200 !important;
+}
+
+/* Floating WhatsApp Pulse Animation */
+@keyframes wa-pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7);
+  }
+
+  70% {
+    box-shadow: 0 0 0 16px rgba(37, 211, 102, 0);
+  }
+
+  100% {
+    box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
+  }
+}
+
+.animate-wa-pulse {
+  animation: wa-pulse 2s infinite;
+}
+
+/* Custom Scrollbar for Category Lists and Table */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #F1F5F9;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #CBD5E1;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #94A3B8;
+}
+
+/* Glassmorphism Accents */
+.glass-header {
+  background: rgba(255, 255, 255, 0.94);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+}
+
+/* Rock-Solid Fixed/Sticky Header Styling - Never transparent, no bleed-through */
+#pactiva-site-header {
+  background-color: #FFFFFF !important;
+  background: #FFFFFF !important;
+  opacity: 1 !important;
+  position: sticky !important;
+  top: 0 !important;
+  z-index: 9999 !important;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.05), 0 1px 2px -1px rgba(0, 0, 0, 0.05) !important;
+}
+
+#pactiva-site-header.shadow-md {
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1) !important;
+}
+
+#pactiva-site-header>div,
+#pactiva-site-header nav {
+  background-color: #FFFFFF !important;
+}
+
+/* WhatsApp Floating Button Outline/Focus Fix - Zero browser cyan/blue box */
+#pactiva-wa-widget,
+#pactiva-wa-widget * {
+  outline: none !important;
+  outline-style: none !important;
+  box-shadow: none;
+  -webkit-tap-highlight-color: transparent !important;
+  -webkit-focus-ring-color: transparent !important;
+}
+
+#pactiva-wa-widget a {
+  outline: none !important;
+  border: none !important;
+  box-shadow: 0 10px 25px -5px rgba(37, 211, 102, 0.45) !important;
+}
+
+#pactiva-wa-widget a:focus,
+#pactiva-wa-widget a:active,
+#pactiva-wa-widget a:focus-visible {
+  outline: none !important;
+  outline-style: none !important;
+  border: none !important;
+  box-shadow: 0 10px 25px -5px rgba(37, 211, 102, 0.55) !important;
+}
+
+/* ==========================================================================
+   Modern WooCommerce Notices & Alerts UI (Zero ugly default styling)
+   ========================================================================== */
+.woocommerce-notices-wrapper {
+  @apply w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 my-4 block clear-both !important;
+}
+
+.woocommerce-message,
+.woocommerce-error,
+.woocommerce-info {
+  @apply rounded-2xl p-4 sm:p-5 text-xs sm:text-sm font-semibold shadow-sm border mb-4 backdrop-blur-sm transition-all duration-300 !important;
+  line-height: 1.6;
+}
+
+.woocommerce-message {
+  @apply bg-emerald-50/95 text-emerald-950 border-emerald-200 flex flex-col sm:flex-row sm:items-center justify-between gap-4 !important;
+}
+
+.woocommerce-error {
+  @apply bg-rose-50/95 text-rose-950 border-rose-200 block list-none m-0 !important;
+}
+
+.woocommerce-error li {
+  @apply flex items-start gap-2 py-0.5 text-rose-900 font-medium !important;
+}
+
+.woocommerce-info {
+  @apply bg-sky-50/95 text-sky-950 border-sky-200 flex items-center gap-3 !important;
+}
+
+/* Button inside notice (e.g. View Cart button in woocommerce-message) */
+.woocommerce-message a.button,
+.woocommerce-message .button.wc-forward,
+.woocommerce-message a.button.wc-forward {
+  @apply inline-flex items-center justify-center gap-1.5 px-4 py-2 bg-slate-950 hover:bg-brand-orange text-white text-xs font-black uppercase tracking-wider rounded-xl shadow-sm transition-all duration-200 shrink-0 border-none float-right ml-4 !important;
+}
+
+.woocommerce-message a.button:hover,
+.woocommerce-message .button.wc-forward:hover {
+  @apply bg-brand-orange text-white transform scale-105 shadow-md shadow-orange-500/25 !important;
+}
+
+@media (max-width: 639px) {
+
+  .woocommerce-message a.button,
+  .woocommerce-message .button.wc-forward,
+  .woocommerce-message a.button.wc-forward {
+    @apply float-none w-full mt-2.5 block text-center ml-0 !important;
+  }
+}
+
+/* Unique Industrial Tech Design Accents */
+.tech-glow-card {
+  position: relative;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.tech-glow-card::before {
+  content: '';
+  position: absolute;
+  inset: -1px;
+  border-radius: inherit;
+  padding: 1px;
+  background: linear-gradient(135deg, rgba(255, 138, 0, 0.4), transparent 60%);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.tech-glow-card:hover::before {
+  opacity: 1;
+}
+
+.tech-spec-pill {
+  @apply inline-flex items-center px-2 py-0.5 text-[10px] font-mono font-bold tracking-tight bg-slate-100 text-slate-700 rounded-md border border-slate-200/80;
+}
+
+/* ==========================================================================
+   Flipkart-Style Smooth Image Zoom Lens
+   ========================================================================== */
+.pactiva-zoom-container {
+  position: relative;
+  overflow: hidden;
+  cursor: crosshair;
+}
+
+.pactiva-zoom-image {
+  transform-origin: center center;
+  transition: transform 0.15s ease-out;
+  will-change: transform;
+}
+
+/* ==========================================================================
+   Modern Quantity Stepper (+/- Buttons) & Single Product Cart Form
+   ========================================================================== */
+.pactiva-quantity-group {
+  display: inline-flex !important;
+  align-items: center !important;
+  border: 1px solid #cbd5e1 !important;
+  border-radius: 14px !important;
+  overflow: hidden !important;
+  background: #ffffff !important;
+  height: 46px !important;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05) !important;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease !important;
+}
+
+.pactiva-quantity-group:focus-within {
+  border-color: #FF8A00 !important;
+  box-shadow: 0 0 0 3px rgba(255, 138, 0, 0.18) !important;
+}
+
+.pactiva-qty-btn {
+  width: 42px !important;
+  height: 46px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  background: #f8fafc !important;
+  border: none !important;
+  color: #334155 !important;
+  font-size: 20px !important;
+  font-weight: 700 !important;
+  line-height: 1 !important;
+  cursor: pointer !important;
+  user-select: none !important;
+  transition: all 0.15s ease !important;
+}
+
+.pactiva-qty-btn:hover {
+  background: #fff7ed !important;
+  color: #FF8A00 !important;
+}
+
+.pactiva-qty-btn:active {
+  transform: scale(0.92) !important;
+}
+
+.pactiva-qty-field {
+  width: 52px !important;
+  height: 46px !important;
+  text-align: center !important;
+  border: none !important;
+  outline: none !important;
+  font-weight: 800 !important;
+  font-size: 15px !important;
+  color: #0f172a !important;
+  background: transparent !important;
+  -moz-appearance: textfield !important;
+}
+
+.pactiva-qty-field::-webkit-outer-spin-button,
+.pactiva-qty-field::-webkit-inner-spin-button {
+  -webkit-appearance: none !important;
+  margin: 0 !important;
+}
+
+form.cart {
+  display: flex !important;
+  align-items: center !important;
+  gap: 14px !important;
+  flex-wrap: wrap !important;
+  margin-top: 10px !important;
+}
+
+form.cart .single_add_to_cart_button {
+  height: 46px !important;
+  padding: 0 28px !important;
+  border-radius: 14px !important;
+  background: linear-gradient(135deg, #FF8A00 0%, #EA580C 100%) !important;
+  color: #ffffff !important;
+  font-weight: 800 !important;
+  font-size: 14px !important;
+  letter-spacing: 0.02em !important;
+  border: none !important;
+  box-shadow: 0 4px 14px rgba(255, 138, 0, 0.28) !important;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  cursor: pointer !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+form.cart .single_add_to_cart_button:hover {
+  box-shadow: 0 8px 24px rgba(255, 138, 0, 0.42) !important;
+  transform: translateY(-1.5px) !important;
+}
+
+form.cart .single_add_to_cart_button:active {
+  transform: translateY(0) scale(0.98) !important;
+}
+
+/* ==========================================================================
+   Modern Product Card System & Performance Optimizations
+   ========================================================================== */
+.pactiva-product-card {
+  contain: layout style paint;
+  content-visibility: auto;
+  contain-intrinsic-size: 320px 480px;
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  will-change: transform, box-shadow;
+}
+
+.pactiva-card-price .price {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 1px !important;
+  line-height: 1.15 !important;
+}
+
+.pactiva-card-price del {
+  color: #94a3b8 !important;
+  font-size: 0.72rem !important;
+  font-weight: 600 !important;
+  text-decoration: line-through !important;
+  opacity: 0.85 !important;
+  display: inline-block !important;
+}
+
+.pactiva-card-price ins {
+  text-decoration: none !important;
+  color: #020617 !important;
+  font-size: 1.05rem !important;
+  font-weight: 900 !important;
+  display: inline-block !important;
+}
+
+.pactiva-card-price .amount {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace !important;
+}
+
+/* Mobile 320px Micro Optimization */
+@media (max-width: 380px) {
+  .pactiva-product-card {
+    border-radius: 1rem !important;
+  }
+
+  .pactiva-product-card .pactiva-card-price ins {
+    font-size: 0.95rem !important;
+  }
+}

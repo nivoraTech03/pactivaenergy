@@ -1,0 +1,17 @@
+/*
+Theme Name: PACTIVA ENERGY
+Theme URI: https://pactivaenergy.com/
+Description: Premium industrial e-commerce child theme for PACTIVA ENERGY — Pactiva Energy Tech India Pvt Ltd. Engineered for lithium battery solutions, EV powertrains, solar energy storage systems (ESS), inverters, and intelligent BMS.
+Author: Pactiva Energy Tech India Pvt Ltd
+Author URI: https://pactivaenergy.com/
+Template: astra
+Version: 1.0.0
+Requires at least: 6.0
+Tested up to: 7.1
+Requires PHP: 8.0
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: pactiva-energy
+*/
+
+/* Styles are compiled from Tailwind CSS locally into assets/css/app.min.css */
